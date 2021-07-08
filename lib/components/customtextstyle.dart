@@ -31,6 +31,15 @@ class CustomTextStyle {
     );
   }
 
+
+  static TextStyle subheading(BuildContext context){
+    return Theme.of(context).textTheme.headline1.copyWith(
+      fontSize: 16.0,
+      color: Headingtextcolor,
+      fontFamily: 'Raleway-Bold',
+      fontWeight: FontWeight.w600,
+    );
+  }
   static TextStyle contenet(BuildContext context){
     return Theme.of(context).textTheme.bodyText1.copyWith(
       fontSize: 14.0,

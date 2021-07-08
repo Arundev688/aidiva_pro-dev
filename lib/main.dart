@@ -1,9 +1,12 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:aidiva_pro/components/CustomColors.dart';
+import 'package:aidiva_pro/page/Dashboard/Dashboard.dart';
 import 'package:aidiva_pro/page/Dashboard/Homepage.dart';
 import 'package:aidiva_pro/page/authentication/IntroSlide.dart';
 import 'package:aidiva_pro/page/authentication/register.dart';
+import 'package:aidiva_pro/provider/AppointmentsProvider.dart';
 import 'package:aidiva_pro/provider/AuthenticationProvider.dart';
 import 'package:aidiva_pro/provider/LookupProvider.dart';
 import 'package:flutter/material.dart';
@@ -12,10 +15,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'components/customtextstyle.dart';
 
 void main(){
+
+  HttpOverrides.global = new MyHttpOverrides();
   runApp(MultiProvider(providers: [
       ChangeNotifierProvider(
       create: (context) => AuthenticationProvider(),
-  ),
+  ), ChangeNotifierProvider(
+      create: (context) => AppointmentsProvider(),
+    ),
     ChangeNotifierProvider(
       create: (context) => LookupProvider(),
     )
@@ -56,6 +63,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Provider.of<LookupProvider>(context, listen: false).geterrorResponsedata();
+     Provider.of<LookupProvider>(context, listen: false).getcountry();
+    Provider.of<LookupProvider>(context, listen: false).getcountrylength();
     _getdata();
   }
 
@@ -174,6 +183,16 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   void navigationDashboardPage() {
     Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (BuildContext context) => Homepage()));
+        MaterialPageRoute(builder: (BuildContext context) => Dasboard()));
+  }
+
+
+}
+
+class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
   }
 }

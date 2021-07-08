@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20.5" height="20.5" viewBox="0 0 20.5 20.5">
+    <defs>
+        <style>
+            .cls-1{fill:#4a4a53;stroke:#474750;stroke-width:.5px}
+        </style>
+    </defs>
+    <g id="loupe" transform="translate(0.25 0.25)">
+        <g id="Group_8">
+            <g id="Group_7">
+                <path id="Path_4" d="M8.808 0a8.808 8.808 0 1 0 8.808 8.808A8.818 8.818 0 0 0 8.808 0zm0 15.989a7.182 7.182 0 1 1 7.182-7.182 7.19 7.19 0 0 1-7.182 7.182z" class="cls-1"/>
+            </g>
+        </g>
+        <g id="Group_10" transform="translate(13.713 13.713)">
+            <g id="Group_9">
+                <path id="Path_5" d="M357.095 355.945l-4.661-4.661a.813.813 0 0 0-1.15 1.15l4.661 4.661a.813.813 0 0 0 1.15-1.15z" class="cls-1" transform="translate(-351.046 -351.046)"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -237,7 +237,7 @@ class _LoginEmailPage extends State<LoginEmailPage> {
                                         Flexible(
                                           child: Text.rich(
                                             TextSpan(
-                                                text: 'By signup, I accept the ',
+                                                text: 'By signingup, I accept the ',
                                                 style: CustomTextStyle.conten2(context),
                                                 children: <InlineSpan>[
                                                   TextSpan(

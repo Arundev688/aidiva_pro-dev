@@ -2,6 +2,7 @@ import 'package:aidiva_pro/components/CustomButton.dart';
 import 'package:aidiva_pro/components/CustomColors.dart';
 import 'package:aidiva_pro/components/customtextstyle.dart';
 import 'package:aidiva_pro/model/RegisterResponse.dart';
+import 'package:aidiva_pro/page/Dashboard/Dashboard.dart';
 import 'package:aidiva_pro/page/Dashboard/Homepage.dart';
 import 'package:aidiva_pro/provider/AuthenticationProvider.dart';
 import 'package:flutter/cupertino.dart';
@@ -243,9 +244,9 @@ class _OtpVerifyPage extends State<OtpVerifyPage> {
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child:
 
-                        Row(children: [
-                          Flexible(
-                            child: Text.rich(
+                        Align(
+                          alignment: Alignment.center,
+                          child:  Text.rich(
                               TextSpan(
                                   text: 'Verification code sent to mobile number',
                                   style: CustomTextStyle.conten2(context),
@@ -258,9 +259,9 @@ class _OtpVerifyPage extends State<OtpVerifyPage> {
                               maxLines: 2,
                               softWrap: true,
                               textAlign: TextAlign.center,
-                            ),
+
                           ),
-                        ],)
+                        ),
                       ),
                       SizedBox(height: device_height * 0.07),
                       Align(
@@ -357,8 +358,9 @@ class _OtpVerifyPage extends State<OtpVerifyPage> {
         //String ema = email.text;
         addBoolToSF("loginstatus", true);
         addStringToSF("bearertoken", value.data.bearer);
+        addStringToSF("uuid", uuid);
         Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => Homepage()),
+            MaterialPageRoute(builder: (context) => Dasboard()),
             (Route<dynamic> route) => false);
         // Navigator.pushAndRemoveUntil(
         //     context,

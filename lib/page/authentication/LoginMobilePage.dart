@@ -29,7 +29,7 @@ class _LoginMobilePage extends State<LoginMobilePage> {
   bool isChecked = false;
 
   String country = "+91";
-  int mobilelength;
+  int mobilelength=0;
 
   bool countryloading=true;
 

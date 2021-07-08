@@ -517,37 +517,37 @@ class _register extends State<Register> {
                     SizedBox(height: device_height * 0.01),
                     Row(
                       children: [
-                      Checkbox(
-                            checkColor: Colors.white,
-                            value: isChecked,
-                            onChanged: (bool value) {
-                              setState(() {
-                                isChecked = value;
-                              });
-                            },
-                          ),
-                            Flexible(
-                             child: Text.rich(
+                        Checkbox(
+                          checkColor: Colors.white,
+                          value: isChecked,
+                          onChanged: (bool value) {
+                            setState(() {
+                              isChecked = value;
+                            });
+                          },
+                        ),
+                        Flexible(
+                          child: Text.rich(
+                            TextSpan(
+                                text: 'By signing up, I accept the ',
+                                style: CustomTextStyle.conten2(context),
+                                children: <InlineSpan>[
                                   TextSpan(
-                                      text: 'By signingup, I accept the ',
-                                      style: CustomTextStyle.conten2(context),
-                                      children: <InlineSpan>[
-                                        TextSpan(
-                                          text: 'Terms and conditions',
-                                          recognizer: TapGestureRecognizer()
-                                            ..onTap = () {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (_) => Webview()));
-                                            },
-                                          style:CustomTextStyle.content2red(context),
-                                        )
-                                      ]),
-                                  maxLines: 2,
-                                  softWrap: true,
-                                ),
-                            ),
+                                    text: 'Terms and conditions',
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (_) => Webview()));
+                                      },
+                                    style:CustomTextStyle.content2red(context),
+                                  )
+                                ]),
+                            maxLines: 2,
+                            softWrap: true,
+                          ),
+                        ),
                         // Expanded(child:Column(
                         //   mainAxisAlignment: MainAxisAlignment.center,
                         //

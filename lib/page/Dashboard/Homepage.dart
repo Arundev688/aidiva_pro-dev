@@ -26,7 +26,7 @@ class _Homepage extends State<Homepage> {
                 body: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Center(child: Text("HomePage")),
+                    //Center(child: Text("HomePage")),
                     SizedBox(height: 20),
                     Align(
                       alignment: Alignment.center,
